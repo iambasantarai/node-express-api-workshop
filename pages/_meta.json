@@ -4,7 +4,8 @@
     "theme": {
       "sidebar": true,
       "toc": false,
-      "breadcrumb": false
+      "breadcrumb": false,
+      "layout": "full"
     }
   },
   "overview": {
@@ -12,7 +13,8 @@
     "theme": {
       "sidebar": true,
       "toc": false,
-      "breadcrumb": false
+      "breadcrumb": false,
+      "layout": "full"
     }
   }
 }

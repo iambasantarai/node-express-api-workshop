@@ -16,5 +16,8 @@
       "breadcrumb": false,
       "layout": "full"
     }
+  },
+  "node": {
+    "title": "Node.js"
   }
 }

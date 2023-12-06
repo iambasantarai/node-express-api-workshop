@@ -1,0 +1,11 @@
+{
+  "index": {
+    "title": "What is Node.js ?",
+    "theme": {
+      "sidebar": true,
+      "toc": false,
+      "breadcrumb": false,
+      "layout": "full"
+    }
+  }
+}

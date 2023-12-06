@@ -1,0 +1,60 @@
+# How to install Node.js ?
+
+Node.js can be installed in different ways.
+
+- [Using official package](https://nodejs.org/en/download)
+- [Using a system package manager](https://nodejs.org/en/download/package-manager/)
+
+**NOTE:** Recommended to use `LTS` version.
+
+## After Installation
+
+Once installed, verify Node.js installation by running the following commands in your terminal:
+```bash copy
+node -v
+npm -v
+```
+These commands should display the installed Node.js version and `npm` (Node Package Manager) version, confirming a successful installation.
+
+```bash
+~ ∮ node -v
+v18.18.0
+~ ∮ npm -v
+9.8.1
+```
+
+## Node version managers
+
+In real-world scenarios, developers often encounter the necessity to work on diverse projects, each requiring specific `node` versions.
+
+To simplify the management of Node.js versions, various version managers have been developed, offering users a streamlined approach to handling different Node.js versions.
+Among the popular choices are tools that facilitate the seamless installation and switching between Node.js versions on a single machine.
+
+Some `node` version managers are:
+- `nvm`
+- `n` 
+- `fnm`
+
+I personally use `n`, No specific reason.
+```bash copy
+npm install -g n
+```
+
+To install `LTS` version using `n` we can simply run following command in your terminal:
+```bash copy
+n lts
+```
+
+> You might need `sudo` previliges in `linux` to use `n`.
+
+```bash
+~ ∮ sudo n lts
+Password:
+     copying : node/20.10.0
+   installed : v20.10.0 (with npm 10.2.3)
+~ ∮ node -v
+v20.10.0
+```
+
+For insights into popular Node.js version managers like `n`, `nvm`, or `fnm`, check their documentation on [`npmjs.com`](https://www.npmjs.com/).
+These resources offer guidance on installation, commands, and features for efficient Node.js version control. We will talk about `packages` later.

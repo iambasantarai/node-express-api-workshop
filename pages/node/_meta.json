@@ -7,5 +7,14 @@
       "breadcrumb": false,
       "layout": "full"
     }
+  },
+  "install": {
+    "title": "Installing Node.js",
+    "theme": {
+      "sidebar": true,
+      "toc": false,
+      "breadcrumb": false,
+      "layout": "full"
+    }
   }
 }

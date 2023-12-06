@@ -18,7 +18,11 @@ const config: DocsThemeConfig = {
   docsRepositoryBase:
     "https://github.com/iambasantarai/node-express-api-workshop",
   footer: {
-    text: <span>{new Date().getFullYear()} © iambasantarai</span>,
+    text: (
+      <div style={{ margin: "auto" }}>
+        <span>{new Date().getFullYear()} © iambasantarai</span>
+      </div>
+    ),
   },
   gitTimestamp: false,
   navigation: {

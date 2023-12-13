@@ -1,0 +1,196 @@
+# Javascript
+
+I assume you have some knowledge of `JavaScript`.
+
+[Javascript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+Let's warm up with a simple number guessing game.
+
+### Generate a random number
+
+Let's make an arrow function to generate a random number between 0 and 99.
+
+```javascript copy
+const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 100);
+}
+```
+
+### Game logic
+
+Let's wrap our main game logic inside immediately invoked function expression ([IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)).
+Inside our `askForGuess()` function we will ask for the user input.
+
+```javascript copy
+(() => {
+    const secretNumber = generateRandomNumber();
+
+    function askForGuess() {
+        console.log("Hello, world 0/");
+    }
+
+    askForGuess();
+ })()
+```
+
+### Ask for user's guess
+
+This function uses `prompt` to take the user guess and stores it in the `guess` variable.
+
+```javascript copy
+function askForGuess() {
+    const guess = prompt("Please enter your guess: ");
+    console.log(`You guessed: ${guess}`);
+}
+```
+
+### Check for exit/cancellation
+
+If the user presses "Cancel" in the prompt, the game says "Bye. Bye!" and exists by using the `return` statement.
+
+```javascript copy
+if(guess === null) {
+    console.log("Bye. Bye!");
+    return;
+}
+```
+
+### Validate the user input
+
+If the user enters something that is not a number, it prompts an error message and calls `askForGuess()` again recursively.
+
+```javascript copy
+if (isNaN(guess)) {
+    console.log("Invalid input. Please enter a number.");
+    askForGuess();
+}
+```
+
+### Compare user guess with secret number
+
+Let's compare the user's guess with the `secretNumber` and provide the feedback based on the comparison.
+
+```javascript copy
+if (guess < secretNumber) {
+    console.log("Too small!");
+    askForGuess();
+} else if (guess > secretNumber) {
+    console.log("Too big!");
+    askForGuess();
+} else {
+    console.log("You win!");
+}
+```
+
+### Run the game
+
+Finally, let's see how our game looks like with updated logic. Let's run it.
+
+```javascript copy
+// generate a random number between 0 and 99
+const generateRandomNumber = () => {
+    return Math.floor(Math.random() * 100);
+}
+
+(() => {
+    // initialize a secret number
+    const secretNumber = generateRandomNumber();
+
+    // function to ask for the user's guess
+    function askForGuess() {
+        const guess = prompt("Please enter your guess: ");
+
+        // check for cancellation
+        if (guess === null) {
+            console.log("Bye. Bye!");
+            return;
+        }
+
+        // validate user input
+        if (isNaN(guess)) {
+            console.log("Invalid input. Please enter a number.");
+            askForGuess();
+        } else {
+            console.log(`You guessed: ${guess}`);
+
+            // compare user's guess with secret number
+            if (guess < secretNumber) {
+                console.log("Too small!");
+                askForGuess();
+            } else if (guess > secretNumber) {
+                console.log("Too big!");
+                askForGuess();
+            } else {
+                console.log("You win!");
+            }
+        }
+    }
+
+    askForGuess();
+})()
+```
+
+### Let's add attempt limitation
+
+In this section, we'll enhance the existing number guessing game by limiting the user to a specific number of attempts.
+
+```javascript
+// generate a random number between 0 and 99
+const generateRandomNumber = () => Math.floor(Math.random() * 100);
+
+// Main game logic
+(() => {
+    // initialize the secretNumber
+    const secretNumber = generateRandomNumber();
+
+    // initialize attempts counter
+    let attempts = 10;
+
+    // function to ask for the user's guess
+    function askForGuess() {
+        // use a while loop to manage attempts
+        while (attempts > 0) {
+            const guess = prompt(`Attempts left: ${attempts}. Please enter your guess:`);
+
+            // check for cancellation
+            if (guess === null) {
+                console.log("Bye. Bye!");
+                return;
+            }
+
+            // validate user input
+            if (isNaN(guess)) {
+                console.log("Invalid input. Please enter a number.");
+            } else {
+                // decrement attempts counter
+                attempts--; 
+
+                console.log(`You guessed: ${guess}`);
+
+                // compare user guess with secret number
+                if (guess < secretNumber) {
+                    console.log("Too small!");
+                } else if (guess > secretNumber) {
+                    console.log("Too big!");
+                } else {
+                    console.log(`Congratulations! You win in ${10 - attempts} attempts.`);
+                    return;
+                }
+            }
+        }
+
+        console.log("Sorry, you've reached the maximum number of attempts. The secret number was:", secretNumber);
+    }
+
+    // start the game by asking for the first guess
+    askForGuess();
+})();
+```
+
+### Conclusion
+
+In this tutorial, we took a hands-on approach to JavaScript, covering fundamental concepts essential for any developer.
+By building a simple number guessing game, we explored `variables`, `functions`, `conditional statements`, `comparison operators`, `IIFE`, `recursion`, and `variable scope` etc.
+
+Remember, this is just the beginning! JavaScript offers a vast landscape of possibilities.
+Dive deeper into the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript) to uncover more advanced features, libraries, and best practices

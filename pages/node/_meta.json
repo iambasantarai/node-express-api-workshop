@@ -17,6 +17,14 @@
       "layout": "full"
     }
   },
+  "browser-vs-node": {
+    "title": "Broser VS Node",
+    "theme": {
+      "sidebar": true,
+      "breadcrumb": false,
+      "layout": "full"
+    }
+  },
   "basics": {
     "title": "Javascript",
     "theme": {

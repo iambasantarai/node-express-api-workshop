@@ -1,0 +1,49 @@
+# Browser V/S Node
+
+When we hear `JavaScript`, automatically "web" comes to mind, right? One cool thing about JavaScript is that it allows you to work with both frontend and backend. Another perk is you don't need to set up or download a language compiler; you can just use your browser.
+
+#### Ok, let's focus on the differences
+
+Both the browser and Node.js use JavaScript as their programming language.
+Building apps that run in the browser is a completely different thing than building a Node.js application.
+Despite the fact that it's always JavaScript, there are some key differences that make the experience radically different.
+
+In the browser, developers interact with the DOM and Web Platform APIs, which are absent in Node.js.
+Node.js offers APIs like filesystem access that are not available in the browser.
+
+Node.js supports both CommonJS and ES module systems, offering flexibility with `require()` and `import`.
+In the browser, the trend is towards implementing the ES Modules standard, limiting developers to using `import`.
+
+> We will talk about the `require` & `imports` later
+
+# Using javascript in `web` & `node`
+
+In the browser, we typically include JavaScript code using the `<script>` tag in HTML or by importing external JavaScript files.
+It's like telling the browser, "Hey, grab this script and make the web page awesome!"
+
+Now, when it comes to Node.js, we take a different approach.
+Instead of relying on `HTML` and `<script>` tags, Node.js uses the CommonJS or ES Modules system for organizing and importing JavaScript files.
+It's like Node.js has its own backstage pass system for JavaScript files to communicate and work together.
+
+So, while in the browser we might have something like:
+
+```html
+<!-- script tag -->
+<script> cool js program
+</script>
+
+<!-- importing as a file -->
+<script src="script.js"></script>
+```
+
+##### What i meant, you can just use your browser
+
+- Open your favourite web broser(e.g., chromium, Chrome, Firefox, Safari)
+- Right click anywhere on the webpage.
+- Select "Inspect" or "Inspect Element" to open the Developer Tools.
+- Navigate to the "Console" tab.
+- In the console, type:
+
+```javascript copy
+console.log("Hello, world 0/");
+```

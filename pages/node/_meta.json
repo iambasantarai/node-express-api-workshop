@@ -32,5 +32,13 @@
       "breadcrumb": false,
       "layout": "full"
     }
+  },
+  "hello-world": {
+    "title": "Hello world",
+    "theme": {
+      "sidebar": true,
+      "breadcrumb": false,
+      "layout": "full"
+    }
   }
 }
